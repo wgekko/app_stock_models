@@ -23,4 +23,10 @@ La **Quant Platform** es una herramienta de análisis financiero de alto rendimi
 ## Instalación
 
 1. Clona el repositorio:
-   git clone [tu-url-de-repositorio]
+   git clone [[tu-url-de-repositorio]](https://github.com/wgekko/app_stock_models.git)]
+
+video demo
+
+
+https://github.com/user-attachments/assets/56b2b073-b3ef-439d-8b3a-c9d97845f968
+
