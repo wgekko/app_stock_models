@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>WalterDev - Star Wars Chrome Intro</title>
+
+    <!-- FUENTE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@800&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root{
+            --duration: 16s;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+
+            width:100%;
+            height:100vh;
+
+            overflow:hidden;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #0b0b0b 0%,
+                    #020202 40%,
+                    #000000 100%
+                );
+        }
+
+        /* =========================================
+           INTRO CINEMATICA
+        ==========================================*/
+
+        .cinematic-wrapper{
+
+            width:min(1300px, 100vw);
+
+            opacity:0;
+
+            transform-origin:center;
+
+            animation:
+                cinematicIntro
+                var(--duration)
+                cubic-bezier(.7,0,.3,1)
+                infinite;
+        }
+
+        @keyframes cinematicIntro{
+
+            0%{
+
+                opacity:0;
+
+                transform:
+                    scale(.96)
+                    translateY(10px);
+
+                filter:
+                    brightness(0)
+                    blur(10px);
+            }
+
+            10%{
+                opacity:.05;
+            }
+
+            18%{
+
+                opacity:.25;
+
+                filter:
+                    brightness(.18)
+                    blur(6px);
+            }
+
+            28%{
+
+                opacity:1;
+
+                transform:
+                    scale(1)
+                    translateY(0);
+
+                filter:
+                    brightness(.75)
+                    blur(0px);
+            }
+
+            45%{
+
+                opacity:1;
+
+                filter:
+                    brightness(1.15);
+            }
+
+            70%{
+
+                opacity:.95;
+
+                transform:
+                    scale(1.01);
+            }
+
+            85%{
+
+                opacity:.35;
+
+                filter:
+                    brightness(.25)
+                    blur(2px);
+            }
+
+            100%{
+
+                opacity:0;
+
+                transform:
+                    scale(1.035)
+                    translateY(-4px);
+
+                filter:
+                    brightness(0)
+                    blur(8px);
+            }
+        }
+
+        /* =========================================
+           SVG
+        ==========================================*/
+
+        svg{
+
+            width:100%;
+            height:auto;
+
+            overflow:visible;
+
+            filter:
+                drop-shadow(0 0 10px rgba(255,255,255,.10))
+                drop-shadow(0 0 25px rgba(255,180,80,.08))
+                drop-shadow(0 15px 20px rgba(0,0,0,.95));
+        }
+
+        text{
+
+            font-family:'JetBrains Mono', monospace;
+            font-weight:800;
+            letter-spacing:4px;
+
+            text-rendering:geometricPrecision;
+        }
+
+        .dark-layer{
+            opacity:.30;
+        }
+
+        .metal-layer{
+            opacity:1;
+        }
+
+        .reflection-layer{
+            opacity:1;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="cinematic-wrapper">
+
+    <svg
+        viewBox="0 0 1400 520"
+        xmlns="http://www.w3.org/2000/svg">
+
+        <defs>
+
+            <!-- =========================================
+                 CURVA
+            ==========================================-->
+
+            <path
+                id="arcPath"
+                d="M 120 310 Q 700 155 1280 310" />
+
+            <!-- =========================================
+                 METAL PRINCIPAL
+            ==========================================-->
+
+            <linearGradient
+                id="metalDark"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%">
+
+                <stop offset="0%" stop-color="#2d2d2d"/>
+                <stop offset="12%" stop-color="#7a7a7a"/>
+                <stop offset="24%" stop-color="#f1f1f1"/>
+                <stop offset="36%" stop-color="#4b4b4b"/>
+                <stop offset="50%" stop-color="#ffffff"/>
+                <stop offset="64%" stop-color="#575757"/>
+                <stop offset="78%" stop-color="#d7d7d7"/>
+                <stop offset="90%" stop-color="#6a6a6a"/>
+                <stop offset="100%" stop-color="#2c2c2c"/>
+
+            </linearGradient>
+
+            <!-- =========================================
+                 CROMADO
+            ==========================================-->
+
+            <linearGradient
+                id="chromeEdge"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%">
+
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="8%" stop-color="#f8f8f8"/>
+                <stop offset="18%" stop-color="#9a9a9a"/>
+                <stop offset="28%" stop-color="#2a2a2a"/>
+                <stop offset="38%" stop-color="#ffffff"/>
+                <stop offset="48%" stop-color="#6b6b6b"/>
+                <stop offset="58%" stop-color="#121212"/>
+                <stop offset="68%" stop-color="#d9d9d9"/>
+                <stop offset="78%" stop-color="#4a4a4a"/>
+                <stop offset="88%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#dcdcdc"/>
+
+            </linearGradient>
+
+            <!-- =========================================
+                 GLOW AMBAR
+            ==========================================-->
+
+            <linearGradient
+                id="amberGlow"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%">
+
+                <stop offset="0%" stop-color="#ffcc55"/>
+                <stop offset="25%" stop-color="#ffdd88"/>
+                <stop offset="50%" stop-color="#fff4cc"/>
+                <stop offset="75%" stop-color="#ffbb33"/>
+                <stop offset="100%" stop-color="#ff9900"/>
+
+            </linearGradient>
+
+            <!-- =========================================
+                 BARRIDO DE LUZ
+            ==========================================-->
+
+            <linearGradient
+                id="lightSweep"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%">
+
+                <stop offset="0%"
+                      stop-color="rgba(255,255,255,0)" />
+
+                <stop offset="42%"
+                      stop-color="rgba(255,255,255,0)" />
+
+                <stop offset="50%"
+                      stop-color="rgba(255,255,255,1)" />
+
+                <stop offset="58%"
+                      stop-color="rgba(255,255,255,0)" />
+
+                <stop offset="100%"
+                      stop-color="rgba(255,255,255,0)" />
+
+            </linearGradient>
+
+            <!-- =========================================
+                 MASCARA REFLEJO
+            ==========================================-->
+
+            <mask id="movingMask">
+
+                <rect
+                    width="1400"
+                    height="520"
+                    fill="black"/>
+
+                <!-- BARRIDO ANCHO -->
+
+                <rect
+                    x="-400"
+                    y="0"
+                    width="240"
+                    height="520"
+                    fill="url(#lightSweep)">
+
+                    <animate
+                        attributeName="x"
+                        from="-400"
+                        to="1700"
+                        dur="5s"
+                        repeatCount="indefinite"/>
+
+                </rect>
+
+                <!-- BARRIDO FINO -->
+
+                <rect
+                    x="-400"
+                    y="0"
+                    width="90"
+                    height="520"
+                    fill="white"
+                    opacity=".25">
+
+                    <animate
+                        attributeName="x"
+                        from="-400"
+                        to="1700"
+                        dur="5s"
+                        begin=".45s"
+                        repeatCount="indefinite"/>
+
+                </rect>
+
+            </mask>
+
+            <!-- =========================================
+                 GLOW SUAVE
+            ==========================================-->
+
+            <filter
+                id="softGlow"
+                x="-40%"
+                y="-40%"
+                width="180%"
+                height="180%">
+
+                <feGaussianBlur
+                    stdDeviation="4"
+                    result="blur"/>
+
+                <feMerge>
+
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+
+                </feMerge>
+
+            </filter>
+
+            <!-- =========================================
+                 GLOW AMBAR FINO
+            ==========================================-->
+
+            <filter
+                id="thinGlow"
+                x="-40%"
+                y="-40%"
+                width="180%"
+                height="180%">
+
+                <feGaussianBlur
+                    stdDeviation="1.8"
+                    result="coloredBlur"/>
+
+                <feColorMatrix
+                    in="coloredBlur"
+                    type="matrix"
+
+                    values="
+                    1 0 0 0 0
+                    0 0.75 0 0 0
+                    0 0.2 0 0 0
+                    0 0 0 1 0"/>
+
+                <feMerge>
+
+                    <feMergeNode/>
+                    <feMergeNode in="SourceGraphic"/>
+
+                </feMerge>
+
+            </filter>
+
+        </defs>
+
+        <!-- =========================================
+             CAPA OSCURA BASE
+        ==========================================-->
+
+        <g class="dark-layer">
+
+            <text
+                font-size="120"
+                filter="url(#softGlow)">
+
+                <textPath
+                    href="#arcPath"
+                    startOffset="50%"
+                    text-anchor="middle">
+
+                    <tspan
+                        fill="#1e1e1e"
+                        stroke="#5e5e5e"
+                        stroke-width="2.2">
+
+                        WALTER-DEV
+
+                    </tspan>
+
+                </textPath>
+
+            </text>
+
+        </g>
+
+        <!-- =========================================
+             CAPA METALICA PRINCIPAL
+        ==========================================-->
+
+        <g
+            class="metal-layer"
+            mask="url(#movingMask)"
+            filter="url(#thinGlow)">
+
+            <text
+                font-size="125">
+
+                <textPath
+                    href="#arcPath"
+                    startOffset="50%"
+                    text-anchor="middle">
+
+                    <tspan
+                        fill="url(#metalDark)"
+                        stroke="url(#amberGlow)"
+                        stroke-width="3.8"
+                        paint-order="stroke fill">
+
+                        WALTER-DEV
+
+                    </tspan>
+
+                </textPath>
+
+            </text>
+
+        </g>
+
+        <!-- =========================================
+             REFLEJO SUPERIOR
+        ==========================================-->
+
+        <g
+            class="reflection-layer"
+            mask="url(#movingMask)">
+
+            <text
+                font-size="135">
+
+                <textPath
+                    href="#arcPath"
+                    startOffset="50%"
+                    text-anchor="middle">
+
+                    <tspan
+                        fill="none"
+                        stroke="#ffffff"
+                        stroke-opacity=".42"
+                        stroke-width="1.2">
+
+                        WALTER-DEV
+
+                    </tspan>
+
+                </textPath>
+
+            </text>
+
+        </g>
+
+        <!-- =========================================
+             LINEA INFERIOR
+        ==========================================-->
+
+        <g
+            transform="translate(0,30)"
+            opacity=".85">
+
+            <path
+                d="M 335 300 Q 700 205 1065 300"
+                fill="none"
+                stroke="url(#amberGlow)"
+                stroke-width="3"
+                filter="url(#softGlow)"/>
+
+            <path
+                d="
+                M 335 300
+                L 335 316
+                L 550 316
+                A 5 5 0 0 0 555 311
+                A 5 5 0 0 0 550 306
+                L 460 306"
+
+                fill="none"
+                stroke="url(#amberGlow)"
+                stroke-width="2"/>
+
+            <path
+                d="
+                M 1065 300
+                L 1065 316
+                L 850 316
+                A 5 5 0 0 1 845 311
+                A 5 5 0 0 1 850 306
+                L 940 306"
+
+                fill="none"
+                stroke="url(#amberGlow)"
+                stroke-width="2"/>
+
+            <circle
+                cx="700"
+                cy="311"
+                r="4.2"
+                fill="url(#amberGlow)"/>
+
+        </g>
+
+        <!-- =========================================
+             BARRIDO GLOBAL
+        ==========================================-->
+
+        <rect
+            x="-1400"
+            y="0"
+            width="1400"
+            height="520"
+            fill="url(#lightSweep)"
+            opacity=".14"
+            pointer-events="none">
+
+            <animate
+                attributeName="x"
+                from="-1400"
+                to="1400"
+                dur="6s"
+                repeatCount="indefinite"/>
+
+        </rect>
+
+    </svg>
+
+</div>
+
+</body>
+</html>
